@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Blue Blog</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1><%= title %></h1>
+        </header>
+
+        <nav>
+            <span><a title="主页" href="/">HOME</a></span>
+            <% if(user) { %>
+            <span><a title="发表" href="/post">POST</a></span>
+            <span><a title="登出" href="/logout">LOGOUT</a></span>
+            <% } else { %> 
+            <span><a title="登陆" href="/login">LOGIN</a></span>
+            <span><a title="注册" href="/reg">REGISTER</a></span>
+            <% } %>
+        </nav>
+
+        <article>
+            <span><a title="上传" href="/upload">upload</a></span>
+            <% if (success) { %>
+            <div><%= success %></div>
+            <% } %>
+            <% if (error) { %>
+            <div><%= error %></div>
+            <% } %>
